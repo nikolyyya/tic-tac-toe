@@ -39,12 +39,12 @@ src/
 ## Как запустить
 
 ```bash
-git clone https://github.com/<ваш-ник>/<репозиторий>.git
-cd <репозиторий>
+git clone https://github.com/nikolyyya/tic-tac-toe
+cd tic_tac_toe
 python -m venv venv
 source venv/bin/activate        # Windows: venv\Scripts\activate
 pip install -r requirements.txt
-python src/main.py              # [уточнить: точка входа]
+python src/main.py             
 ```
 
 Сервер запустится на `http://localhost:5000` **[уточнить порт]**.
