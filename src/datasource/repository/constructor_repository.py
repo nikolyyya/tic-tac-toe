@@ -1,14 +1,22 @@
+from datasource.model.game import Game as DatasourceGame
+#from datasource.database import SessionLocal
 from datasource.mapper.game_mapper import domain_to_datasource, datasource_to_domain
-from datasource.repository.storage import GameStorage
+
 class GameRepository:
-    def __init__(self, storage: GameStorage):
-        self.storage = storage
+    def __init__(self, session_factory):
+        self.session_factory = session_factory
 
     def save(self, domain_game):
         datasource_game = domain_to_datasource(domain_game)
-        self.storage.save_game(datasource_game)
+        with self.session_factory() as db:
+            db.merge(datasource_game)
+            db.commit()
 
     def get(self, id):
-        datasource_game = self.storage.get_game(id)
-        domain_game = datasource_to_domain(datasource_game)
-        return domain_game
+        with self.session_factory() as db:
+            game = db.get(DatasourceGame, id)
+            if game:
+                return datasource_to_domain(game)
+            return None
+
+    

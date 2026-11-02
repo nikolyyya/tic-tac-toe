@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра — Крестики-нолики</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="game-page" data-game-id="{{ game_id }}">
+    <h1>Крестики-нолики</h1>
+    <p>Идентификатор игры: {{ game_id }}</p>
+    <p>Вы ходите первым, кликните по желаемой клетке.</p>
+
+    <table class="matrix">
+        <tr><td data-row="0" data-col="0"></td><td data-row="0" data-col="1"></td><td data-row="0" data-col="2"></td></tr>
+        <tr><td data-row="1" data-col="0"></td><td data-row="1" data-col="1"></td><td data-row="1" data-col="2"></td></tr>
+        <tr><td data-row="2" data-col="0"></td><td data-row="2" data-col="1"></td><td data-row="2" data-col="2"></td></tr>
+    </table>
+    <p id="status"></p>
+
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>

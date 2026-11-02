@@ -2,6 +2,7 @@ from domain.service.game_service import GameService
 from datasource.repository.constructor_repository import GameRepository
 from domain.model.game import Game
 from domain.model.board import Board
+from domain.exception.game_not_found_error import GameNotFoundError
 
 class GameServiceImpl(GameService):
     def __init__(self, repository: GameRepository):
@@ -44,6 +45,8 @@ class GameServiceImpl(GameService):
         current_id = game.id
         current_cells = game.board.cells
         previous_game = self.repository.get(current_id)
+        if previous_game is None:
+            raise GameNotFoundError()
         previous_cells = previous_game.board.cells
         expected_symbol = GameServiceImpl.computer_step(previous_cells)
         valid = True

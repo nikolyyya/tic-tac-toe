@@ -1,0 +1,76 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #a8c4e0;
+    color: #333;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    background-color: #34495e;
+    color: white;
+}
+
+main {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.welcome {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.start-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.start-button:hover {
+    background-color: #2980b9;
+}
+
+footer {
+    text-align: center;
+    color: #777;
+}
+
+.game-page {
+    text-align: center;
+}
+
+.matrix {
+    display: inline-table;
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-size: 40px;
+    text-align: center;
+}
+
+.matrix td {
+    width: 80px;
+    height: 80px;
+    padding: 0;
+    border: 2px solid #34495e;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+}
+
+.matrix td:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.matrix tr:first-child td { border-top: none; }
+.matrix tr:last-child td { border-bottom: none; }
+.matrix td:first-child { border-left: none; }
+.matrix td:last-child { border-right: none; }
