@@ -1,6 +1,6 @@
 from datasource.database import Base
 from sqlalchemy.orm import mapped_column, Mapped
-from sqlalchemy import Integer, Uuid
+from sqlalchemy import Integer
 from typing import List
 from sqlalchemy.dialects.postgresql import ARRAY
 import uuid

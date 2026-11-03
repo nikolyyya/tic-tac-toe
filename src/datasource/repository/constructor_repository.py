@@ -2,6 +2,7 @@ from datasource.model.game import Game as DatasourceGame
 #from datasource.database import SessionLocal
 from datasource.mapper.game_mapper import domain_to_datasource, datasource_to_domain
 
+
 class GameRepository:
     def __init__(self, session_factory):
         self.session_factory = session_factory
@@ -18,5 +19,6 @@ class GameRepository:
             if game:
                 return datasource_to_domain(game)
             return None
+
 
     
